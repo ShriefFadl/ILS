@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/toastr")
+
+<style>
+    .container {
+        position: relative;
+    }
+
+    .center {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        font: oblique;
+    }
+
+    .btn {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: rgba(128, 128, 128, 0.12);
+        color: #000000;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 1.5px;
+        text-align: center;
+    }
+
+    .container .btn:hover {
+        background-color: rgba(85, 194, 248, 0.59);
+    }
+
+    img {
+        width: 99%;
+        height: 740px;
+        opacity: 0.25;
+        background-image: url('../../Content/airforceslogo.png');
+    }
+</style>
+
+<body>
+
+
+
+
+
+
+    <div class="container">
+        <img width="1000" height="500">
+        <div  id="btnx" type="button" class="btn btn-danger" onclick="displayToastr()">
+            New Forum
+
+        </div>
+
+        <div class="center">Welcome to The ILS System</div>
+
+        
+    </div>
+
+   
+</body>
+
+<script>
+
+   // document.getElementById("btnx").addEventListener("click",displayToastr());
+
+    /* 
+    $(document).ready(function () {
+
+
+       btnx.onclick= displayToastr();
+    });*/
+
+    function displayToastr() {
+       
+        toastr.error('An error occured ', 'Please contact with system administrator.')
+
+    }
+</script>

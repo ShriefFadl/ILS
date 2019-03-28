@@ -1,0 +1,66 @@
+﻿@model    IEnumerable<Fury.Models.Production>
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Employee CRUD Operations</h2>
+
+@*<a class="btn btn-success" style="margin-bottom:10px"for="@Url.Action("CreateProForm", "ProductionForm")">new</a>*@
+@*<button type="button" onclick="window.location.herf='@Url.Action("CreateProForm", "ProductionForm")'">new</button>*@
+<a href="/ProductionForm/CreateProForm">
+    <input type="button" class="btn btn-success" style="margin-bottom:30px"  value="Click Me" />
+</a>
+<table id="employeeTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>FSCM</th>
+            <th>Part_num</th>
+            <th>Serial_Num</th>
+            <th>NiiN</th>
+           
+        </tr>
+        
+    </thead>
+</table>
+<table>
+  
+
+    
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FSCM)
+            </th>
+            </tr>
+            
+</table>
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+@section scripts{
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    var Popup, dataTable;
+    $(document).ready(function () {
+        dataTable =  $("#ProductionTable").DataTable({
+            "ajax": {
+                "url": "/ProductionForm/Getdata",
+                "type": "GET",
+                "datatype": "json"
+            },
+            "columns": [
+                { "data": "FSCM" },
+                { "data": "Part_num" },
+                { "data": "Serial_Num" },
+                { "data": "NiiN" }
+              
+                
+              
+            ]
+        });
+    });
+</script>
+    }

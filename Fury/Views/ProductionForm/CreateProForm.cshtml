@@ -1,0 +1,97 @@
+﻿@model Fury.Models.Production
+@{
+    ViewBag.Title = "CreateProForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<link href="~/Content/css/select2.min.css" rel="stylesheet" />
+
+
+<h1><b> Submit your Production Forum</b></h1>
+<script src="~/"></script>
+<style>
+   
+    .form-group {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .btn {
+    }
+    
+</style>
+@using (Html.BeginForm("SubmitProductionForm", "ProductionForm"))
+{<br /><br />
+    <p class="alert alert-info">All fileds are <strong> Required</strong> </p>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FSCM)
+        @Html.TextBoxFor(m => m.FSCM, new { @class = "form-control", placeholder = "5 digit", })
+        @Html.ValidationMessageFor(m => m.FSCM)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Part_num)
+        @Html.TextBoxFor(m => m.Part_num, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Part_num)
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.Serial_Num )
+        @Html.TextBoxFor(m => m.Serial_Num, new { @class ="form-control", placeholder = "Serial" })
+        @Html.ValidationMessageFor(m => m.Serial_Num)
+    </div>
+    <div class="form-group">
+
+
+        @Html.LabelFor(m => m.NiiN)
+        @Html.TextBoxFor(m => m.NiiN, new { @class = "form-control", placeholder = "9 digit" })
+        @Html.ValidationMessageFor(m => m.NiiN)
+        @*  @Html.LabelFor(m => m.Date_submit)
+            @Html.TextBoxFor(m=> m.Date_submit, new { @class = "form-control" , placeholder= "time submited "})
+        *@
+    </div>
+    <div class="form-group" >
+        @Html.LabelFor(m => m.workshop)
+        <div id="select2">
+            <select class="myselect2" style="width:280px "  >
+                <option>test</option>
+                <option>test1</option>
+
+            </select>
+        </div>
+    </div>
+
+     @*<div class="form-group">
+        @Html.LabelFor(m=>m.workshop)
+        @Html.DropDownListFor(m => m.workshops , new SelectList(Model.workshop,"ID","name"),"Select work shop", new { @class = "form-control"})
+        
+    </div>*@
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary" onclick="displayToastr()">
+            Submit Forum
+
+        </button>
+       @*@Html.EJ().Button("element").("Button").CssClass("e-flat").Render()*@
+
+        <br /><br />
+     
+
+
+    <script>
+       
+
+   
+
+    function displayToastr() {
+
+        toastr.success('Thank you')
+
+    }
+    </script>
+
+
+}
+
+<script src="~/Scripts/select2.js"></script>
+
+

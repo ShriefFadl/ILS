@@ -1,0 +1,52 @@
+﻿
+
+@model IEnumerable<Fury.Models.Production>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr class=" btn-primary">
+        <th>
+            @Html.DisplayNameFor(model => model.FSCM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serial_Num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NiiN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Part_num)
+        </th>
+
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class=" btn-info">
+            <td>
+                @Html.DisplayFor(modelItem => item.FSCM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serial_Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NiiN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Part_num)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FSCM },new { @class="btn btn-primary"}) |
+                @Html.ActionLink("Details", "Details", new { id = item.FSCM }, new { @class = "btn btn-success"})
+       
+                @Html.ActionLink("Delete", "Delete", new { id = item.FSCM }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+        
+    }
+
+</table>  

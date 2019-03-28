@@ -1,0 +1,48 @@
+﻿@model Fury.Models.Technician
+@{
+    ViewBag.Title = "NewTechnican";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 dir="rtl">تقني جديد</h2>
+
+<style>
+    .form-group {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .btn {
+    }
+</style>
+@using (Html.BeginForm("CreateTech", "Users"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ID)
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control", placeholder = "stock number", })
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "temp password" })
+
+
+    </div>
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-primary" onsubmit="displayToastr()">
+            Add Technician
+        </button>
+
+
+        <script>
+
+
+
+
+    function displayToastr() {
+
+        toastr.success('Thank you')
+
+    }
+        </script>
+
+}
