@@ -5,73 +5,78 @@
 }
 @Scripts.Render("~/bundles/toastr")
 
+
 <style>
-    .container {
-        position: relative;
-    }
+        .container {
+            position: relative;
 
-    .center {
-        position: absolute;
-        left: 0;
-        top: 30%;
-        width: 100%;
-        text-align: center;
-        font-size: 30px;
-        font: oblique;
-    }
+        }
+         .container img {
+            width: 99%;
+            height: 740px;
+            opacity: 0.25;
+            background-image: url('../../Content/airforceslogo.png');
+        }
 
-    .btn {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        -moz-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: rgba(128, 128, 128, 0.12);
-        color: #000000;
-        font-size: 16px;
-        padding: 12px 24px;
-        border: none;
-        cursor: pointer;
-        border-radius: 1.5px;
-        text-align: center;
-    }
+        .container .center {
+            position: absolute;
+            left: 0;
+            top: 30%;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            font: oblique;
+        }
 
-    .container .btn:hover {
-        background-color: rgba(85, 194, 248, 0.59);
-    }
+       .container .btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                background-color: #555;
+                color: white;
+                font-size: 16px;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                text-align: center;
+            }
 
-    img {
-        width: 99%;
-        height: 740px;
-        opacity: 0.25;
-        background-image: url('../../Content/airforceslogo.png');
-    }
-</style>
+        .container .btn:hover {
+            background-color: rgba(85, 194, 248, 0.59);
+        }
 
-<body>
 
+    </style>
+
+    <body>
 
 
 
 
 
-    <div class="container">
-        <img width="1000" height="500">
-        <div  id="btnx" type="button" class="btn btn-danger" onclick="displayToastr()">
-            New Forum
+
+        <div class="container" >
+
+                <img width="1000" height="500">
+
+            @*<button class="btn1" onclick="displayToastr()">
+                New Forum
+
+            </button>*@
+            @Html.ActionLink("New Form", "ProDetails", "ProductionForm",null,  new { @class = "btn btn-success" })
+            
+           
+
+            <div class="center">Welcome to The ILS System</div>
+
 
         </div>
 
-        <div class="center">Welcome to The ILS System</div>
 
-        
-    </div>
-
-   
-</body>
+    </body>
 
 <script>
 

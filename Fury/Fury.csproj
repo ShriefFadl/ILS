@@ -173,7 +173,6 @@
     <Compile Include="Controllers\LandingPageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductionFormController.cs" />
-    <Compile Include="Controllers\SubmitedFormsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -792,9 +791,11 @@
     <Content Include="Scripts\toastr.min.js.map" />
     <Content Include="Views\LandingPage\Index.cshtml" />
     <Content Include="Views\View.cshtml" />
-    <Content Include="Views\SubmitedForms\Show.cshtml" />
     <Content Include="Views\ProductionForm\Create.cshtml" />
     <Content Include="Views\ProductionForm\ProDetails.cshtml" />
+    <Content Include="Views\ProductionForm\Details.cshtml" />
+    <Content Include="Views\ProductionForm\Edit.cshtml" />
+    <Content Include="Views\ProductionForm\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -803,7 +804,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>

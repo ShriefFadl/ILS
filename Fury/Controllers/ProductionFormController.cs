@@ -38,7 +38,39 @@ namespace Fury.Controllers
             objdatacotext.SaveChanges();
             return View();
         }
+        public ActionResult Details(string id)
+        {
+            var emp = objdatacotext.production_form.Find(id);
+            return View(emp);
+        }
+        public ActionResult Edit(string id)
+        {
+            
+            var emp = objdatacotext.production_form.Find(id);
+            return View(emp);
+        }
+        [HttpPost]
+        public ActionResult Edit(Production objEmp)
+        {
+            var data = objdatacotext.production_form.Find(objEmp.FSCM);
+            if (data != null)
+            {
+                data.FSCM = objEmp.FSCM;
+                data.Serial_Num = objEmp.Serial_Num;
+                data.NiiN = objEmp.NiiN;
+                data.Part_num = objEmp.Part_num;
+            }
+            objdatacotext.SaveChanges();
+            return View();
+        }
 
+        public ActionResult Delete(string id)
+        {
+            
+            var emp = objdatacotext.production_form.Find(id);
+            return View(emp);
+        }
+        
     }
 }
         /*

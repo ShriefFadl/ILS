@@ -3,7 +3,7 @@
 @model IEnumerable<Fury.Models.Production>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create",new { @class="btn btn-primary" })
 </p>
 <table class="table">
     <tr class=" btn-primary">
@@ -44,9 +44,29 @@
                 @Html.ActionLink("Details", "Details", new { id = item.FSCM }, new { @class = "btn btn-success"})
        
                 @Html.ActionLink("Delete", "Delete", new { id = item.FSCM }, new { @class = "btn btn-danger" })
+                <button class="btn btn-default" onclick="displayToastr()">Seen</button>
+
+
             </td>
         </tr>
         
     }
 
-</table>  
+</table> 
+<script>
+
+   // document.getElementById("btnx").addEventListener("click",displayToastr());
+
+    /*
+    $(document).ready(function () {
+
+
+       btnx.onclick= displayToastr();
+    });*/
+
+    function displayToastr() {
+
+        toastr.success( 'Please contact with system administrator for mor datails.','Clock start!!! ')
+
+    }
+</script> 
