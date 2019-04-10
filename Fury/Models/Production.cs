@@ -15,9 +15,11 @@ namespace Fury.Models
         public string FSCM  { get; set; }
         [Required]
         [MaxLength(32)]
+        [Display(Name ="Part Number")]
         public string Part_num { get; set; }
         [Required]
         [MaxLength(15)]
+        [Display(Name = "Serial Number")]
         public string Serial_Num { get; set; }
 
         public DateTime Date_submit = DateTime.Now;
