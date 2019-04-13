@@ -12,7 +12,8 @@ namespace Fury
     {
         protected void Application_Start()
         {
-           
+            DashboardConfig.RegisterService(RouteTable.Routes);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
