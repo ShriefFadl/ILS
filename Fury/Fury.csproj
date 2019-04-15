@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201903210557580_Populateworkshops.Designer.cs">
       <DependentUpon>201903210557580_Populateworkshops.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904140550266_User3.cs" />
+    <Compile Include="Migrations\201904140550266_User3.Designer.cs">
+      <DependentUpon>201904140550266_User3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HighBoard.cs" />
@@ -869,6 +873,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903210557580_Populateworkshops.resx">
       <DependentUpon>201903210557580_Populateworkshops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904140550266_User3.resx">
+      <DependentUpon>201904140550266_User3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

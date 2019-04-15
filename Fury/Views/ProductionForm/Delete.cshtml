@@ -1,5 +1,5 @@
 ﻿@model Fury.Models.Production
-
+<script src="~/Scripts/toastr.js"></script>
 <h2>Are you sure you want to delete this?</h2>
 <div>
     <h4>Production</h4>
@@ -31,14 +31,14 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+  
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" onclick="displayToastr()" /> |
-            @Html.ActionLink("Back to List", "ProDetails")
+            <input type="submit" value="Delete" class="btn btn-default" onclick="displayToastr()" /> 
+            <div> @Html.ActionLink("Back to List", "ProDetails")</div>
         </div>
-    }
+    
 </div>
 <script>
 
@@ -47,7 +47,7 @@
 
     function displayToastr() {
 
-        toastr.info(" Form deleted  ")
+        toastr.info("Form deleted","Rturn to the view list")
 
     }
 </script>
