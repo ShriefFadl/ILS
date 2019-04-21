@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/material.css" />
-   
+
     <meta name="description" content="The description of my page" />
 </head>
 <body>
@@ -24,7 +24,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                   
+
                     <li>@Html.ActionLink("New Tech", "NewTechnican", "Users")</li>
                     <li>@Html.ActionLink("New User", "NewUser", "Users")</li>
                     <li>@Html.ActionLink("Pro form", "Create", "ProductionForm")</li>
@@ -38,7 +38,7 @@
         @RenderBody()
         <hr />
         <footer>
-           <b> <p>&copy; @DateTime.Now.Year - ILS System</p></b>
+            <b> <p>&copy; @DateTime.Now.Year - ILS System</p></b>
         </footer>
     </div>
 
